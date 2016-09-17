@@ -1,5 +1,6 @@
 angular.module('starter.controllers', [])
 
+
 .controller('DashCtrl', function($scope, $ionicPopup) {
 
    $scope.showPrompt = function() {
@@ -22,61 +23,21 @@ angular.module('starter.controllers', [])
       });
 
       promptPopup.then(function(res) {
-         outputDate = console.log(res);
-         var lst = document.getElementById("ion-list");
-         var item = tab-dash.createElement("button");
-         item.appendChild(tab-dash.createTextNode(outputDate));
+         outputDate = res;
+         var lst = document.getElementById("FoodButtons");
+         var item = document.createElement("button");
+         item.appendChild(document.createTextNode(outputFood));
+         item.appendChild(document.createTextNode(outputDate));
          lst.appendChild(item);
       });
     
      promptPopup2.then(function(res) {
-         outputFood = console.log(res);
-         var lst = document.getElementById("ion-list");
-         var item = document.createElement("button");
-         item.appendChild(document.createTextNode(outputFood));
-         lst.appendChild(item);
+      outputFood = res;
       });
    };
 
 })
 
-/*.controller('DashCtrl', function($scope, $ionicPopup) {
-
-   // When button is clicked, the popup will be shown...
-   $scope.showPopup = function() {
-      $scope.data = {}
-    
-      // Custom popup
-      var myPopup = $ionicPopup.show({
-         template: '<input type = "text" ng-model = "data.model">',
-         title: 'Food Entry',
-         subTitle: 'Enter Food Item',
-         scope: $scope,
-      
-         buttons: [
-            { text: 'Cancel' }, {
-               text: '<b>Save</b>',
-               type: 'button-positive',
-                  onTap: function(e) {
-            
-                     if (!$scope.data.model) {
-                        //don't allow the user to close unless he enters model...
-                           e.preventDefault();
-                     } else {
-                        return $scope.data.model;
-                     }
-                  }
-            }
-         ]
-      });
-
-      myPopup.then(function(res) {
-         var output = console.log(res);
-
-      });    
-   };
-
-})*/
 
 .controller('RecipesCtrl', function($scope) {})
 
