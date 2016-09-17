@@ -1,16 +1,21 @@
 <ion-view view-title="My Groceries">
   <ion-content>
-<ion-list>
-  <ion-item-sliding #item>
-    <ion-item>
-      Cheese
-    </ion-item>
-    <ion-item>
-      Hamburgers rock
-    </ion-item>
-    <ion-item>
-      Oranges
-    </ion-item>
+    <div class="bar bar-header item-input-inset">
+  <label class="item-input-wrapper">
+    <i class="icon ion-ios-search placeholder-icon"></i>
+    <input type="search" placeholder="Search">
+  </label>
+  <button class="button button">
+    Cancel
+  </button>
+</div>
+    <ion-list>
+
+  <ion-checkbox ng-model="filter.cheese">Cheese</ion-checkbox>
+  <ion-checkbox ng-model="filter.peaches">Peaches</ion-checkbox>
+  <ion-checkbox ng-model="filter.sauce">Sauce</ion-checkbox>
+
+</ion-list>
     
 
   </ion-content>
