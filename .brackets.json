@@ -2,6 +2,7 @@
     "jscodehints.detectedExclusions": [
         "/Users/amandachen/fridgebuddy/plugins/cordova-plugin-device/src/tizen/DeviceProxy.js",
         "/Users/amandachen/fridgebuddy/plugins/cordova-plugin-device/src/firefoxos/DeviceProxy.js",
-        "/Users/amandachen/fridgebuddy/plugins/cordova-plugin-device/src/windows/DeviceProxy.js"
+        "/Users/amandachen/fridgebuddy/plugins/cordova-plugin-device/src/windows/DeviceProxy.js",
+        "/Users/amandachen/fridgebuddy/plugins/cordova-plugin-device/tests/tests.js"
     ]
 }
