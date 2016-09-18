@@ -1,36 +1,36 @@
 <ion-view view-title="Fridge Buddy">
     <ion-content class="padding">
-        <div class="list list-inset">
-            <!--<label class="item item-input">
-                <i class="icon ion-search placeholder-icon"></i>
-                <input type="text" placeholder="Search">
-            </label>-->
-        </div>
 
-        <center>
-            <img src="img/fridge.png">
-
-
-            <h1><center>Fridge Buddy</center></h1>
-            <p>
-                Enter what's in your fridge!
-            </p>
-        </center>
+        <img src="img/fridge.png">
 
         <button class="button button-full button-balanced" ng-click="showPrompt()">
-            
+
             <i class="icon ion-plus-circled"></i> Add New Item
         </button>
 
-        <h3>Food Item
+        <h3>Food Item 
         <span class="item-note">
-    	    <h3>Expiration Date</h3>
+        <div id= "exp-date">
+            <h3>Expiration Date</h3></div>
         </span>
         </h3>
-        
-        <button class="button button-outline button-balanced" ng-repeat="item in foodList" on-swipe-left="deleteItem(item)">
-            <div id="item-name"> {{ item.name }} </div>
-            <div id="item-date"> {{ item.date }} </div>
+
+        <button class="button button-outline button-assertive">
+            <div id="item-name"> Milk
+                <span class="item-note">
+                    <div id="exp-item">09/18/16</div>
+                </span>
+            </div>
+
         </button>
+        <button class="button button-outline button-balanced" ng-repeat="item in foodList" on-swipe-left="deleteItem(item)">
+            <div id="item-name"> {{ item.name }}
+                <span class="item-note">
+                    <div id="item-date"> {{ item.date }}</div>
+                </span>
+            </div>
+
+        </button>
+
     </ion-content>
 </ion-view>
