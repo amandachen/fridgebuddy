@@ -5,9 +5,9 @@ angular.module('starter.controllers', [])
 
    $scope.showPrompt = function() {
 
-      var outputFood
-      var outputDate
-      var foodItem
+      var outputFood;
+      var outputDate;
+      var foodItem;
 
       var promptPopup = $ionicPopup.prompt({
          title: 'Date',
@@ -62,25 +62,6 @@ angular.module('starter.controllers', [])
    };
 })
 
-.controller('RecipesCtrl', function($scope) {})
-         var lst = document.getElementById("FoodButtons");
-         var item = document.createElement("button");
-         item.appendChild(document.createTextNode(outputFood));
-         item.appendChild(document.createTextNode(outputDate));
-         lst.appendChild(item);
-      });
-    
-     promptPopup2.then(function(res) {
-      outputFood = res;
-      });
-   };
-
-})
-
-
-.controller('RecipesCtrl', function($scope) {})
-
-
 
 .controller('ChatsCtrl', function($scope, $ionicPopup) {
   $scope.$on("$ionicView.loaded", function() {
@@ -111,19 +92,6 @@ angular.module('starter.controllers', [])
 
 })
 
-  // With the new view caching in Ionic, Controllers are only called
-  // when they are recreated or on app start, instead of every page change.
-  // To listen for when this page is active (for example, to refresh data),
-  // listen for the $ionicView.enter event:
-  //
-  //$scope.$on('$ionicView.enter', function(e) {
-  //});
-
- // $scope.chats = Chats.all();
- // $scope.remove = function(chat) {
-  //  Chats.remove(chat);
- // };
-//})
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);
