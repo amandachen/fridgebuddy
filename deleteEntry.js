@@ -8,11 +8,10 @@ function deleteEntry(){
 var r = confirm("Do you want to delete this entry?");
 if (r == true) {
     var gparent = document.getElementById("ion-content");
-    var parent = document.getElementById("food-button");
-	var child = document.getElementById("1");
+    var parent = document.getElementById("FoodButtons");
+	var child = document.getElementById("eggos");
 	var list = document.getElementById("myList");
-	parent.removeChild(child);
-
+	parent.removeChild(child);s
 }
 else {}
 }
