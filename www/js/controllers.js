@@ -1,5 +1,6 @@
 angular.module('starter.controllers', [])
 
+
 .controller('DashCtrl', function($scope, $ionicPopup) {
 
    $scope.showPrompt = function() {
@@ -62,8 +63,54 @@ angular.module('starter.controllers', [])
 })
 
 .controller('RecipesCtrl', function($scope) {})
+         var lst = document.getElementById("FoodButtons");
+         var item = document.createElement("button");
+         item.appendChild(document.createTextNode(outputFood));
+         item.appendChild(document.createTextNode(outputDate));
+         lst.appendChild(item);
+      });
+    
+     promptPopup2.then(function(res) {
+      outputFood = res;
+      });
+   };
 
-.controller('ChatsCtrl', function($scope, Chats) {
+})
+
+
+.controller('RecipesCtrl', function($scope) {})
+
+
+
+.controller('ChatsCtrl', function($scope, $ionicPopup) {
+  $scope.$on("$ionicView.loaded", function() {
+   $scope.showPrompt2 = function() {
+
+      var groceryItem
+      
+      var promptGrocery = $ionicPopup.prompt({
+         title: 'New Grocery Item',
+         template: 'Add to Grocery List',
+         inputType: 'text',
+         inputPlaceholder: ''
+      });
+
+      promptPopup.then(function(res) {
+         groceryItem = res;
+         var lst = document.getElementById("grocery-list");
+         var item = document.createElement("ion-checkbox");
+         console.log(lst);
+         console.los(item);
+         item.appendChild(document.createTextNode(groceryItem));
+         lst.appendChild(item);
+          console.log(lst);
+         console.los(item);
+      });
+   };
+   });
+
+})
+
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -72,11 +119,11 @@ angular.module('starter.controllers', [])
   //$scope.$on('$ionicView.enter', function(e) {
   //});
 
-  $scope.chats = Chats.all();
-  $scope.remove = function(chat) {
-    Chats.remove(chat);
-  };
-})
+ // $scope.chats = Chats.all();
+ // $scope.remove = function(chat) {
+  //  Chats.remove(chat);
+ // };
+//})
 
 .controller('ChatDetailCtrl', function($scope, $stateParams, Chats) {
   $scope.chat = Chats.get($stateParams.chatId);

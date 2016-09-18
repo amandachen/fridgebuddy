@@ -1,9 +1,10 @@
 button {
-	background-color: #33cd5f;
+  background-color: #33cd5f;
     border: none;
-    color: white;
+    display: block;
     width: 100%;
     padding: 14px;
+    color: white;
     text-align: left;
     text-decoration: none;
     display: inline-block;
