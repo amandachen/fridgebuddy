@@ -1,60 +1,32 @@
 <ion-view view-title="Fridge Buddy">
-  <ion-content class="padding">
-    <div class="list list-inset">
-      <label class="item item-input">
-        <i class="icon ion-search placeholder-icon"></i>
-        <input type="text" placeholder="Search">
-      </label>
-    </div>
-    <h1><center>Fridge Buddy</center></h1>
-    <p>
-    <center>OPEN YOUR FRIDGE!!!!!!!!!
-    </p>
-    <img src="img/fridge.png">
-    </center>
-    <button class = "button button-full button-balanced" ng-click = "showPrompt()">
-      <i class="icon ion-plus-circled"></i>
-      Add New Item
-    </button>
-    <p>
-    <h3>Food Item
-    <span class="item-note">
-    	<h3>Date</h3>
-    </span>
-    </h3>
-    </p>
-    <div id="food-button">
-    <button id="1" class="button button-full button-balanced" ng-click = "showConfirm()">
-      <div style="text-align:left">
-      Eggs
-      <span class="item-note">
-        <font color="white">
-          9/16/16
-        </font>
-      </span>
-      </div>
-    </button>
-    <button id="2" class="button button-full button-balanced" ng-click = "showConfirm()">
-      <div style="text-align:left">
-      Milk
-      <span class="item-note">
-        <font color="white">
-          9/17/16
-        </font>
-      </span>
-      </div>
-    </button>
-    <button id="3" class="button button-full button-assertive" ng-click = "showConfirm()">
-      <div style="text-align:left">
-      Oishi Bowl
-      <span class="item-note">
-        <font color="white">
-          9/12/16
-        </font>
-      </span>
-      </div>
-    </button>
-    </div>
-</ul>
-  </ion-content>
+    <ion-content class="padding">
+        <div class="list list-inset">
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="Search">
+            </label>
+        </div>
+
+        <center>
+            <img src="img/fridge.png">
+
+
+        <h1><center>Fridge Buddy</center></h1>
+        <p>
+                OPEN YOUR FRIDGE!!!!!!!!!
+            </p>
+        </center>
+
+        <button class="button button-full button-balanced" ng-click="showPrompt()">
+            <i class="icon ion-plus-circled"></i> Add New Item
+        </button>
+        <h3>Food Item
+        <span class="item-note">
+    	    <h3>Date</h3>
+        </span>
+        </h3>
+        <button class="button" ng-repeat="item in foodList">
+          {{ item.name }}, {{ item.date }}
+        </button>
+    </ion-content>
 </ion-view>
