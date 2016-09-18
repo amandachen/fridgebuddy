@@ -13,7 +13,7 @@ angular.module('starter.controllers', [])
       //$scope.foodDate = '';
 
         var promptPopup = $ionicPopup.show({
-            title: 'Test Title',
+            title: 'New Food Entry',
             templateUrl: 'newItem.html',
             scope: $scope,
             buttons: [
