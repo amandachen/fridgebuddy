@@ -56,18 +56,18 @@ angular.module('starter.controllers', [])
          inputPlaceholder: ''
       });
 
-      promptPopup.then(function(res) {
-         groceryItem = res;
-         var lst = document.getElementById("grocery-list");
-         var item = document.createElement("ion-checkbox");
-         console.log(lst);
-         console.los(item);
-         item.appendChild(document.createTextNode(groceryItem));
-         lst.appendChild(item);
-          console.log(lst);
-         console.los(item);
+      promptGrocery.then(function(res) {
+        if (typeof res != 'undefined') {
+          if (res != '') {
+            groceryItem = { name: res };
+            $scope.groceryList.push(groceryItem);
+          }
+        }
       });
    };
+
+   $scope.groceryList = [{ name: 'Potato' }, { name: 'Yogurt' }];
+
    });
 
 })
