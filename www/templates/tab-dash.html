@@ -1,32 +1,36 @@
 <ion-view view-title="Fridge Buddy">
     <ion-content class="padding">
         <div class="list list-inset">
-            <label class="item item-input">
+            <!--<label class="item item-input">
                 <i class="icon ion-search placeholder-icon"></i>
                 <input type="text" placeholder="Search">
-            </label>
+            </label>-->
         </div>
 
         <center>
             <img src="img/fridge.png">
 
 
-        <h1><center>Fridge Buddy</center></h1>
-        <p>
-                OPEN YOUR FRIDGE!!!!!!!!!
+            <h1><center>Fridge Buddy</center></h1>
+            <p>
+                Enter what's in your fridge!
             </p>
         </center>
 
         <button class="button button-full button-balanced" ng-click="showPrompt()">
+            
             <i class="icon ion-plus-circled"></i> Add New Item
         </button>
+
         <h3>Food Item
         <span class="item-note">
-    	    <h3>Date</h3>
+    	    <h3>Expiration Date</h3>
         </span>
         </h3>
-        <button class="button" ng-repeat="item in foodList">
-          {{ item.name }}, {{ item.date }}
+        
+        <button class="button button-balanced" ng-repeat="item in foodList" on-swipe-left="deleteItem(item)">
+            <div id="item-name"> {{ item.name }} </div>
+            <div id="item-date"> {{ item.date }} </div>
         </button>
     </ion-content>
 </ion-view>

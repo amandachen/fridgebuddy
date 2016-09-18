@@ -2,85 +2,48 @@ angular.module('starter.controllers', [])
 
 
 .controller('DashCtrl', function ($scope, $ionicPopup) {
-    $scope.foodList = [{ name: 'Eggs', date: '09/17/16' }];
+    $scope.foodList = [{
+        name: 'Eggs',
+        date: '09/17/16'
+            }];
 
     $scope.foodItem = '';
     $scope.foodDate = '';
 
     $scope.showPrompt = function () {
 
-      //$scope.foodItem = '';
-      //$scope.foodDate = '';
-
         var promptPopup = $ionicPopup.show({
-            title: 'Test Title',
+            title: 'Enter a Food Item!',
             templateUrl: 'newItem.html',
             scope: $scope,
             buttons: [
-              { text: 'Cancel', onTap: function(e) { return true; } },
-              {
-                text: 'Add',
-                onTap: function(e) {
-                  $scope.foodItem = document.getElementById('foodItem').value;
-                  $scope.foodDate = document.getElementById('foodDate').value;
-                  $scope.foodList.push({ name: $scope.foodItem, date: $scope.foodDate })
+                {
+                    text: 'Cancel',
+                    onTap: function (e) {
+                        return true;
+                    }
+                },
+                {
+                    text: 'Add',
+                    onTap: function (e) {
+                        $scope.foodItem = document.getElementById('foodItem').value;
+                        $scope.foodDate = document.getElementById('foodDate').value;
+                        $scope.foodList.push({
+                            name: $scope.foodItem,
+                            date: $scope.foodDate
+                        })
 
-                }
+                    }
               }
             ]
+
         });
+    }
 
-        /*
-        var promptPopup2 = $ionicPopup.prompt({
-            title: 'Food Entry',
-            template: 'Enter Food Item',
-            inputType: 'text',
-            inputPlaceholder: 'Eg. Eggs, Milk, etc.'
-        });
-        */
+    $scope.deleteItem = function (item) {
+        $scope.foodList.splice($scope.foodList.indexOf(item), 1);
+    }
 
-        /*
-        promptPopup.then(function (res) {
-            outputDate = res;
-            var lst = document.getElementById("food-button");
-            var item = document.createElement("item-note");
-            outputDate = item.appendChild(document.createTextNode(outputDate));
-            //foodItem.appendChild(outputDate);
-        });
-        */
-
-        /*
-        promptPopup2.then(function (res) {
-            outputFood = res;
-            var lst = document.getElementById("food-button");
-            var item = document.createElement("button");
-            item.appendChild(document.createTextNode(outputFood));
-            foodItem = item;
-            lst.appendChild(item);
-        });
-        */
-    };
-
-    $scope.showConfirm = function () {
-        var id
-
-        function reply_click(clicked_id) {
-            id = clicked_id;
-        }
-        var confirmPopup = $ionicPopup.confirm({
-            title: console.log(id),
-            template: 'Do you want to delete this item?'
-        });
-
-        confirmPopup.then(function (res) {
-            if (res) {
-                console.log('Sure!');
-            } else {
-                console.log('Not sure!');
-            }
-        });
-
-    };
 })
 
 
@@ -88,7 +51,7 @@ angular.module('starter.controllers', [])
     $scope.$on("$ionicView.loaded", function () {
         $scope.showPrompt2 = function () {
 
-            var groceryItem
+            var groceryItem;
 
             var promptGrocery = $ionicPopup.prompt({
                 title: 'New Grocery Item',
