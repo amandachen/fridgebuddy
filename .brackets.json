@@ -3,6 +3,7 @@
         "/Users/amandachen/fridgebuddy/plugins/cordova-plugin-device/src/tizen/DeviceProxy.js",
         "/Users/amandachen/fridgebuddy/plugins/cordova-plugin-device/src/firefoxos/DeviceProxy.js",
         "/Users/amandachen/fridgebuddy/plugins/cordova-plugin-device/src/windows/DeviceProxy.js",
-        "/Users/amandachen/fridgebuddy/plugins/cordova-plugin-device/tests/tests.js"
+        "/Users/amandachen/fridgebuddy/plugins/cordova-plugin-device/tests/tests.js",
+        "/Users/amandachen/fridgebuddy/platforms/ios/build/emulator/MyGreatApp.app/www/plugins/cordova-plugin-statusbar/www/statusbar.js"
     ]
 }

@@ -1,26 +1,21 @@
 <ion-view view-title="My Groceries">
-  <ion-content class="padding">
-    <div class="list list-inset">
-      <label class="item item-input">
-        <i class="icon ion-search placeholder-icon"></i>
-        <input type="text" placeholder="Search">
-      </label>
-    </div>
-        
+    <ion-content class="padding">
+        <div class="list list-inset">
+            <label class="item item-input">
+                <i class="icon ion-search placeholder-icon"></i>
+                <input type="text" placeholder="Search">
+            </label>
+        </div>
 
-   <a class="item item-icon-left item-balanced" ng-click = "showPrompt2()">
-    <i class="icon ion-plus-circled"></i>
-    Add New Grocery
-  </a>
- 
 
-    <div class="grocery-list">
+        <a class="item item-icon-left item-balanced" ng-click="showPrompt2()">
+            <i class="icon ion-plus-circled"></i> Add New Grocery
+        </a>
 
-  <ion-checkbox ng-model="filter.cheese">Cheese</ion-checkbox>
-  <ion-checkbox ng-model="filter.peaches">Peaches</ion-checkbox>
-  <ion-checkbox ng-model="filter.sauce">Sauce</ion-checkbox>
 
-    </div>
-  
-  </ion-content>
+        <div id="grocery-list">
+            <ion-checkbox ng-repeat="grocery in groceryList" class="item-unchecked"> {{ grocery.name }}</ion-checkbox>
+        </div>
+
+    </ion-content>
 </ion-view>

@@ -11,14 +11,7 @@ if (r == true) {
     var parent = document.getElementById("FoodButtons");
 	var child = document.getElementById("eggos");
 	var list = document.getElementById("myList");
-	console.log(gparent);
-
-	console.log(parent);
-	console.log(child);
-	//var cNode = document.createElement(child);
-	var pNode = document.createTextNode(parent);
-	parent.removeChild(child);
-	
+	parent.removeChild(child);s
 }
 else {}
 }

@@ -1,26 +1,24 @@
 <ion-view view-title="Account">
-  <ion-content>
-    <ion-list>
-    <div ng-controller= "AccountCtrl">
-    <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
-    </ion-toggle>
-    <ion-toggle  ng-model="settings.enableNotifications">
-        Enable Notifications
-    </ion-toggle>
-    </div>
-    </ion-list>
-    <button class="button button-full button-assertive" ng-click= "showConfirm()">
-        Reset Fridge
-	  </button>
-<p>
-  <div class="col col-center text-center">
- <div>Icons made by <a href="http://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a>
-          from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>
-          is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
-      Fridge Buddy by Amanda Chen, Michael Velez, Michelle O'Bryan, Swathi Chakrapani 2016
-       </div>
+    <ion-content>
+        <ion-list>
+            <div ng-controller="AccountCtrl">
+                <ion-toggle ng-model="settings.enableFriends">
+                    Enable Friends
+                </ion-toggle>
+                <ion-toggle ng-model="settings.enableNotifications">
+                    Enable Notifications
+                </ion-toggle>
+            </div>
+        </ion-list>
+        <button class="button button-full button-assertive" ng-click="showConfirm()">
+            Reset Fridge
+        </button>
+        <p>
+            <div class="col col-center text-center">
+                <div>Icons made by <a href="http://www.flaticon.com/authors/roundicons" title="Roundicons">Roundicons</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
+                Fridge Buddy by Amanda Chen, Michael Velez, Michelle O'Bryan, Swathi Chakrapani 2016
+            </div>
         </p>
-         
-  </ion-content>
+
+    </ion-content>
 </ion-view>

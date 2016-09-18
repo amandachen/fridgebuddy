@@ -1,5 +1,5 @@
 button {
-  background-color: #33cd5f;
+    background-color: #33cd5f;
     border: none;
     display: block;
     width: 100%;
@@ -14,8 +14,8 @@ button {
 }
 
 item-note {
-	text-align: right;
-	width: 100%;
-	font-size: 14px;
-	color: white;
+    text-align: right;
+    width: 100%;
+    font-size: 14px;
+    color: white;
 }
