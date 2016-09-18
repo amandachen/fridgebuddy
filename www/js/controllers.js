@@ -2,35 +2,54 @@ angular.module('starter.controllers', [])
 
 
 .controller('DashCtrl', function ($scope, $ionicPopup) {
+    $scope.foodList = [{ name: 'Eggs', date: '09/17/16' }];
+
+    $scope.foodItem = '';
+    $scope.foodDate = '';
 
     $scope.showPrompt = function () {
 
-        var outputFood;
-        var outputDate;
-        var foodItem;
+      //$scope.foodItem = '';
+      //$scope.foodDate = '';
 
-        var promptPopup = $ionicPopup.prompt({
-            title: 'Date',
-            template: 'Enter Date',
-            inputType: 'text',
-            inputPlaceholder: 'Eg. 9/17/16'
+        var promptPopup = $ionicPopup.show({
+            title: 'Test Title',
+            templateUrl: 'newItem.html',
+            scope: $scope,
+            buttons: [
+              { text: 'Cancel', onTap: function(e) { return true; } },
+              {
+                text: 'Add',
+                onTap: function(e) {
+                  $scope.foodItem = document.getElementById('foodItem').value;
+                  $scope.foodDate = document.getElementById('foodDate').value;
+                  $scope.foodList.push({ name: $scope.foodItem, date: $scope.foodDate })
+
+                }
+              }
+            ]
         });
 
+        /*
         var promptPopup2 = $ionicPopup.prompt({
             title: 'Food Entry',
             template: 'Enter Food Item',
             inputType: 'text',
             inputPlaceholder: 'Eg. Eggs, Milk, etc.'
         });
+        */
 
+        /*
         promptPopup.then(function (res) {
             outputDate = res;
             var lst = document.getElementById("food-button");
             var item = document.createElement("item-note");
             outputDate = item.appendChild(document.createTextNode(outputDate));
-            foodItem.appendChild(outputDate);
+            //foodItem.appendChild(outputDate);
         });
+        */
 
+        /*
         promptPopup2.then(function (res) {
             outputFood = res;
             var lst = document.getElementById("food-button");
@@ -39,6 +58,7 @@ angular.module('starter.controllers', [])
             foodItem = item;
             lst.appendChild(item);
         });
+        */
     };
 
     $scope.showConfirm = function () {
